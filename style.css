@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    width: 800px;
+    height: 800px;
+    background: azure;
+    border: black .5px solid;
+}
+
+.square-pane {
+    border: .5px black solid;
+    background-color: white;
+    display: inline-block;
+    margin: .5px .5px 0 .5px;
+}
+
+.square-pane:hover {
+    background-color: darkslategray;
+}
