@@ -8,15 +8,18 @@ html, body {
     height: 800px;
     background: azure;
     border: black .5px solid;
+    overflow-y: hidden;
+    text-align: center;
 }
 
 .square-pane {
-    border: .5px black solid;
+ /*   border: .5px black solid; */
     background-color: white;
-    display: inline-block;
-    margin: .5px .5px 0 .5px;
+    float:left;
+ /*   margin: .5px .5px 0 .5px; */
+    padding: none;
+    height: 50px;
+    width: 50px;
+    border: dotted 1px gray;
 }
 
-.square-pane:hover {
-    background-color: darkslategray;
-}
