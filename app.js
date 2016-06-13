@@ -1,34 +1,31 @@
 var i = 0;
 var cont = $("#container");
 var newGrid = $("#new-grid");
-var suggest;
-var sty = $(".square-pane");
-var colourChange = $("#randColour");
+var reset = $("#reset");
+var shading = $("#shading")
 
-$("div").mouseover(function(){
-    $(event.target).css("background-color", "blue")
-});
 newGrid.on("click", function(){
-    suggest = prompt("Enter a number between 1 - 64");
+    var suggest = prompt("Enter a number between 1 - 64");
     var dub = suggest*suggest;
     var wist = 800 / suggest;
-    console.log(wist);
-    popGrid(dub, wist);
+    popGrid(dub, wist)
+    $("div").hover(function(){
+        $(event.target).css({"background-color": "green"})
+});
 })
-while (i < 256) {
-    cont.append("<div class='square-pane'></div>");
-    i++;
-}
-function popGrid(as, pf) {
-    var t = 0;
-    cont.empty();
-    while (t < as) {
-        $("<div></div>", {
-            "class": "square-pane"
-        }).width(pf).height(pf).appendTo(cont);
-        t++;
-    }
-}
+reset.on("click", function(){
+    $("div").css("background-color", "white");
+})
+shading.on("click", function(){
+    $("div").hover(function(){
+        $(this).css("background-colour", "green")});
+});
+
+
+
+
+
+
 function colour() {
     return Math.floor((Math.random()*255));
 }
@@ -36,9 +33,19 @@ function colour() {
 function rgba(){
     return "rgb(" + colour() + "," + colour() + "," + colour() + ");";
 }
+function popGrid(as, pf) {
+    var t = 0;
+    cont.empty();
+    while (t < as) {
+        $("<div></div>", {
+            "class": "square-pane" }).width(pf).height(pf).appendTo(cont)
+        t++;
+    }
+}
 
-colourChange.on("click", function(){
-    $("div").mouseover(function(){
-        $(event.target).css("background-color", rgba())
-});
-})
+
+// colourChange.on("click", function(){
+//    $("div").mouseover(function(){
+//        $(event.target).css({"background-color": rgba()})
+//});
+//})
